@@ -47,8 +47,8 @@
    core_fraction = 20                     # Гарантированная доля vCPU в %
    disc_size     = 15                     # Размер диска в ГБ
    disc_type     = "network-hdd"          # Тип накопителя
-   image_id      = "fd8e9t6fpgi13oh7q39f" # [ID образа ОС](https://yandex.cloud/ru/docs/compute/operations/images-with-pre-installed-software/get-list)
-   preemptible   = true                   # [Прерываемость ВМ](https://yandex.cloud/ru/docs/compute/concepts/preemptible-vm)
+   image_id      = "fd8e9t6fpgi13oh7q39f" # ID образа ОС (Debian 12)  
+   preemptible   = true                   # Прерываемость ВМ (true = значительно дешевле)
 
    # --- Настройки доступа и сети ---
    ssh_user            = "debian"                   # Пользователь для SSH-доступа
