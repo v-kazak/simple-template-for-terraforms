@@ -1,0 +1,15 @@
+zone          = "ru-central1-d"        // Зона расположения сервера
+name          = "web-server"                 // Префикс имени сервера, test-0, test-1, ...
+vps_count     = 2                      // Количествосоздаваемых серверов
+cores_count   = 2                      // Количество ядер сервера
+memory_count  = 2                      // Количество ГБ ОЗУ
+core_fraction = 20                     // Гарантированная доля вычислительного времени физических ядер в %
+disc_size     = 15                     // Размер диска в ГБ
+disc_type     = "network-hdd"          // Тип диска 
+platform_type = "standard-v3"          // Тип платформы сервера
+nat           = "true"                 // Присваеваем внешний IP
+image_id      = "fd8e9t6fpgi13oh7q39f" // Идентификатор образа ОС (Debain)
+preemptible   = "true"                 // Прерываемость сервера
+blns_zone     = "ru-central1"          // Зона балансировщика
+ssh_user      = "debian"               // Пользователь SSH по-умолчанию
+ssh_public_key_path = "~/.ssh/id_ed25519.pub"  //Путь для публичного ключа
