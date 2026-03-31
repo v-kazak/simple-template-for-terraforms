@@ -63,11 +63,6 @@ resource "yandex_vpc_subnet" "default" {
   folder_id      = var.folder_id
 }
 
-output "external_ips" {
-  description = "Публичный IP-адреса виртуальных машин"
-  value       = [for instance in yandex_compute_instance.default : instance.network_interface[0].nat_ip_address]
-}
-
 resource "yandex_lb_target_group" "my_blns" {
   name      = "my-target-group"
   region_id = var.blns_zone
@@ -106,9 +101,4 @@ resource "yandex_lb_network_load_balancer" "my_nlb" {
       }
     }
   }
-}
-
-output "load_balancer_public_ip" {
-  description = "Публичный IP-адрес сетевого балансировщика"
-  value       = tolist(tolist(yandex_lb_network_load_balancer.my_nlb.listener)[0].external_address_spec)[0].address
 }
